@@ -16,7 +16,7 @@ struct Banner {
     let type: String
     let storeId: String
     
-    init(json: JSON) {
+    init(json: JSON) {        
         self.id = json["ID"].stringValue
         self.imgSrc = json["IMAGE_SRC"].stringValue
         self.type = json["TYPE"].stringValue

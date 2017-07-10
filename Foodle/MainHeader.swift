@@ -7,6 +7,7 @@
 //
 
 import LBTAComponents
+import TRON
 
 class MainHeader: DatasourceCell {
     
@@ -14,7 +15,6 @@ class MainHeader: DatasourceCell {
         let button = UIButton()
         button.setTitle("잠실6동", for: .normal)
         button.setTitleColor(ColorRes.colorBlack, for: .normal)
-        //button.backgroundColor = .red
         button.titleLabel?.font = UIFont.systemFont(ofSize: 24)
         button.titleEdgeInsets = UIEdgeInsetsMake(5, -65, 0, 0)
         button.setImage(#imageLiteral(resourceName: "bg_select_down"), for: .normal)
@@ -23,7 +23,8 @@ class MainHeader: DatasourceCell {
         return button
     }()
     
-    // $$ 슬라이드 배너로 교체 필요
+    // $$ 슬라이드 배너로 교체 필요 -> Page View Controller로 변경
+
     let bannerImageView: CachedImageView = {
         let imageView = CachedImageView()
         imageView.backgroundColor = .green
@@ -45,9 +46,26 @@ class MainHeader: DatasourceCell {
 }
 
 
-class BannerImageView: UICollectionView {
+
+class BannerController: DatasourceController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        Service.sharedInstance.fetchBannerFeed{ (bannerDatasource, err) in
+            
+            if let err = err {
+                if let apiError = err as? APIError<Service.JSONError> {
+                    print(apiError)
+                }
+                return
+            }
+            
+            self.datasource = bannerDatasource
+        }
+    }
     
-    
-    
+    override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width, height: 300)
+    }
 }

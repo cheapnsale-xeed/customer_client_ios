@@ -8,8 +8,9 @@
 
 import UIKit
 import SwiftyJSON
+import TRON
 
-struct Store {
+class Store: JSONDecodable {
     
     let id: String
     let category: String
@@ -18,7 +19,7 @@ struct Store {
     let paymentType: String
     let avgPrepTime: String
     let mainImageUrl: String
-    //let menus: Any
+    var menus: [Menu] = []
     let phoneNumber: String
     let gpsCoordinatesLat: Double
     let gpsCoordinatesLong: Double
@@ -33,7 +34,7 @@ struct Store {
     let parkInfo: String
     let webSite: String
     let posTime: String
-    //let imgList: Any
+    var imgList: [String] = []
     let closedStoreInfo: String
     let endTimeInfo: String
     //let operatingTimes: Any
@@ -43,7 +44,20 @@ struct Store {
     let newStore: String
     
     
-    init(json: JSON) {
+    required init(json: JSON) {
+        
+        if let menusJson = json["MENUS"].array {
+            for menu in menusJson  {
+                self.menus.append(Menu(json: menu))
+            }
+        }
+        
+        if let storeImgList = json["IMG_LIST"].array {
+            for img in storeImgList {
+                self.imgList.append(String(json: img))
+            }
+        }
+        
         self.id = json["ID"].stringValue
         self.category = json["CATEGORY"].stringValue
         self.regNum = json["REG_NUM"].stringValue
@@ -51,7 +65,6 @@ struct Store {
         self.paymentType = json["PAYMENT_TYPE"].stringValue
         self.avgPrepTime = json["AVG_PREP_TIME"].stringValue
         self.mainImageUrl = json["MAIN_IMG"].stringValue
-        //self.menus: Any
         self.phoneNumber = json["PHONE"].stringValue
         self.gpsCoordinatesLat = json["GPS_COORDINATES_LAT"].doubleValue
         self.gpsCoordinatesLong = json["GPS_COORDINATES_LONG"].doubleValue
@@ -66,7 +79,6 @@ struct Store {
         self.parkInfo = json["PARK_INFO"].stringValue
         self.webSite = json["WEB_SITE"].stringValue
         self.posTime = json["POS_TIME"].stringValue
-        //self.imgList: Any
         self.closedStoreInfo = json["CLOSED_STORE_INFO"].stringValue
         self.endTimeInfo = json["END_TIME_INFO"].stringValue
         //self.operatingTimes: Any

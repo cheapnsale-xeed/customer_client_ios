@@ -7,6 +7,7 @@
 //
 
 import LBTAComponents
+import SwiftyJSON
 
 
 class StoreCell: DatasourceCell {
@@ -14,11 +15,29 @@ class StoreCell: DatasourceCell {
     override var datasourceItem: Any? {
         didSet {
             guard let store = datasourceItem as? Store else { return }
+            storeId = store.id
             storeNameLabel.text = store.name
             prepareTimeLabel.text = "\(store.avgPrepTime)분 걸려요"
             storeImageView.loadImage(urlString: store.mainImageUrl)
+            
+            /*
+            let menus = store.menus
+            
+            for menu in menus {
+                print(menu.menuName)
+            }
+ 
+            let imgList = store.imgList
+            
+            for img in imgList {
+                print(img)
+            }
+            */
         }
     }
+        
+    // Store ID
+    var storeId: String = ""
     
     // Store 이름
     let storeNameLabel: UILabel = {

@@ -37,14 +37,12 @@ class MainController: DatasourceController {
                     if apiError.response?.statusCode != 200 {
                         //self.errorMessageLabel.text = "Status code was not 200"
                     }
-                }
-                
+                }                
                 return
             }
             
             self.datasource = mainDatasource
         }
-
     }
     
     
@@ -57,6 +55,16 @@ class MainController: DatasourceController {
         return CGSize(width: view.frame.width, height: 190)
     }
     
+    
+    // Store 선택시 상세 화면으로 이동
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storeDetailController = StoreDetailController()
+        let cell = collectionView.cellForItem(at: indexPath)
+        let storeCell = cell as! StoreCell
+        print(storeCell.storeNameLabel.text ?? "cell")
+        storeDetailController.storeId = storeCell.storeId
+        navigationController?.setViewControllers([storeDetailController], animated: true)
+    }
     
     
     func setupNavigationBarItems() {

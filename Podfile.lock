@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.5.0)
+  - DLRadioButton (1.4.9)
   - LBTAComponents (0.1.9)
   - SwiftyJSON (3.1.4)
   - TRON (2.0.1):
@@ -13,15 +14,17 @@ PODS:
     - TRON/Core
 
 DEPENDENCIES:
+  - DLRadioButton (~> 1.4)
   - LBTAComponents (~> 0.1.9)
   - TRON (~> 2.0.0)
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  DLRadioButton: 7bb8a6e3768b572469ace553391ab4d2af6f9c19
   LBTAComponents: 9a5d314080d1f80208062ccc81a2d25225c5f572
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   TRON: 7b9adeb678fe0e25433d207f6a734aaf145fa9b5
 
-PODFILE CHECKSUM: 320bef39b363e4630f88046589cc10939409cc72
+PODFILE CHECKSUM: 990da03014f1a6f6d886b680d6c91edfd42b1b76
 
 COCOAPODS: 1.2.1

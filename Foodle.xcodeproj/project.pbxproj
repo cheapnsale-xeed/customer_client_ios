@@ -30,6 +30,11 @@
 		477EDE281F0B4C610097EF47 /* StoreTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477EDE271F0B4C610097EF47 /* StoreTabBar.swift */; };
 		477EDE2C1F0E31750097EF47 /* StoreMenuListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477EDE2B1F0E31750097EF47 /* StoreMenuListCell.swift */; };
 		477EDE2E1F0F2B830097EF47 /* StoreTabMenuDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477EDE2D1F0F2B830097EF47 /* StoreTabMenuDetailView.swift */; };
+		8603C3031F1C73D3007FEA0E /* OrderItemDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603C3021F1C73D3007FEA0E /* OrderItemDetailCell.swift */; };
+		8603C3061F1C7464007FEA0E /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603C3051F1C7464007FEA0E /* OrderItem.swift */; };
+		8603C30C1F1C994D007FEA0E /* CollapsibleOrderDetailTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603C30B1F1C994D007FEA0E /* CollapsibleOrderDetailTableViewHeader.swift */; };
+		8603C30E1F1CA115007FEA0E /* CollapsibleOrderDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8603C30D1F1CA115007FEA0E /* CollapsibleOrderDetailTableViewController.swift */; };
+		863BB8BC1F14639100D393EA /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863BB8BB1F14639100D393EA /* OrderViewController.swift */; };
 		D7E7E8D38735FC66D8C406E2 /* Pods_Foodle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8AC6C797AF8AB8B68D260D1 /* Pods_Foodle.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +66,11 @@
 		477EDE2B1F0E31750097EF47 /* StoreMenuListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreMenuListCell.swift; sourceTree = "<group>"; };
 		477EDE2D1F0F2B830097EF47 /* StoreTabMenuDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTabMenuDetailView.swift; sourceTree = "<group>"; };
 		7F249AF7E76E9FE72774D09D /* Pods-Foodle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Foodle.release.xcconfig"; path = "Pods/Target Support Files/Pods-Foodle/Pods-Foodle.release.xcconfig"; sourceTree = "<group>"; };
+		8603C3021F1C73D3007FEA0E /* OrderItemDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderItemDetailCell.swift; sourceTree = "<group>"; };
+		8603C3051F1C7464007FEA0E /* OrderItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderItem.swift; sourceTree = "<group>"; };
+		8603C30B1F1C994D007FEA0E /* CollapsibleOrderDetailTableViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollapsibleOrderDetailTableViewHeader.swift; sourceTree = "<group>"; };
+		8603C30D1F1CA115007FEA0E /* CollapsibleOrderDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollapsibleOrderDetailTableViewController.swift; sourceTree = "<group>"; };
+		863BB8BB1F14639100D393EA /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		B8AC6C797AF8AB8B68D260D1 /* Pods_Foodle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Foodle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -144,6 +154,7 @@
 		47D82E951F009E9E00EF0458 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8603C3011F1C738D007FEA0E /* OrderView */,
 				477EDE2A1F0B4C7F0097EF47 /* MainView */,
 				477EDE291F0B4C660097EF47 /* StoreDetailView */,
 			);
@@ -169,6 +180,7 @@
 			children = (
 				474BF3D71EE13BB400719EB9 /* MainController.swift */,
 				477EDE021F00CD720097EF47 /* StoreDetailController.swift */,
+				863BB8BB1F14639100D393EA /* OrderViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -180,6 +192,17 @@
 				7F249AF7E76E9FE72774D09D /* Pods-Foodle.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		8603C3011F1C738D007FEA0E /* OrderView */ = {
+			isa = PBXGroup;
+			children = (
+				8603C3021F1C73D3007FEA0E /* OrderItemDetailCell.swift */,
+				8603C3051F1C7464007FEA0E /* OrderItem.swift */,
+				8603C30B1F1C994D007FEA0E /* CollapsibleOrderDetailTableViewHeader.swift */,
+				8603C30D1F1CA115007FEA0E /* CollapsibleOrderDetailTableViewController.swift */,
+			);
+			name = OrderView;
 			sourceTree = "<group>";
 		};
 		CB85D1BABF071FD76772AD89 /* Frameworks */ = {
@@ -225,7 +248,7 @@
 				TargetAttributes = {
 					474BF3D11EE13BB400719EB9 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = VCYFECP3BQ;
+						DevelopmentTeam = 3B72C2AT6N;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -316,12 +339,17 @@
 				477EDE081F00DA780097EF47 /* MainDatasource.swift in Sources */,
 				477EDE221F0A08760097EF47 /* StoreDetailDatasource.swift in Sources */,
 				474BF3D81EE13BB400719EB9 /* MainController.swift in Sources */,
+				8603C30C1F1C994D007FEA0E /* CollapsibleOrderDetailTableViewHeader.swift in Sources */,
+				8603C3031F1C73D3007FEA0E /* OrderItemDetailCell.swift in Sources */,
+				8603C30E1F1CA115007FEA0E /* CollapsibleOrderDetailTableViewController.swift in Sources */,
 				477EDE1A1F04D9E60097EF47 /* Menu.swift in Sources */,
+				8603C3061F1C7464007FEA0E /* OrderItem.swift in Sources */,
 				477EDE051F00D5A80097EF47 /* MainHeader.swift in Sources */,
 				477EDE1C1F04DCB50097EF47 /* SubMenu.swift in Sources */,
 				477EDE181F037F8D0097EF47 /* BannerCell.swift in Sources */,
 				477EDE101F0229BB0097EF47 /* Store.swift in Sources */,
 				477EDE141F036C810097EF47 /* Banner.swift in Sources */,
+				863BB8BC1F14639100D393EA /* OrderViewController.swift in Sources */,
 				477EDE0E1F021C0A0097EF47 /* UtilService.swift in Sources */,
 				477EDE2E1F0F2B830097EF47 /* StoreTabMenuDetailView.swift in Sources */,
 				477EDE031F00CD720097EF47 /* StoreDetailController.swift in Sources */,
@@ -438,13 +466,15 @@
 			baseConfigurationReference = 1DBC92D8F980C30D9508263C /* Pods-Foodle.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VCYFECP3BQ;
+				DEVELOPMENT_TEAM = 3B72C2AT6N;
 				INFOPLIST_FILE = Foodle/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lab.xeed.Foodle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -453,13 +483,15 @@
 			baseConfigurationReference = 7F249AF7E76E9FE72774D09D /* Pods-Foodle.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VCYFECP3BQ;
+				DEVELOPMENT_TEAM = 3B72C2AT6N;
 				INFOPLIST_FILE = Foodle/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lab.xeed.Foodle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

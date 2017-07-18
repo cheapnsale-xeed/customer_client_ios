@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Foodle/StoreCell.swift"
+            timestampString = "521453252.797573"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "StoreCell"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Foodle/CollapsibleOrderDetailTableViewHeader.swift"
+            timestampString = "521973773.692004"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "layoutSubviews()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Foodle/CollapsibleOrderDetailTableViewController.swift"
+            timestampString = "521970011.123295"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "Section"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Foodle.Section.init (name : Swift.String, items : Swift.Array&lt;Swift.String&gt;, collapsed : Swift.Bool) -&gt; Foodle.Section"
+                  moduleName = "Foodle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/devcraft12/Documents/workspace/cheapnsale/iOS/customer_client_ios/Foodle/CollapsibleOrderDetailTableViewController.swift"
+                  timestampString = "522032635.064605"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "113">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Foodle.Section.name.getter : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;"
+                  moduleName = "Foodle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/devcraft12/Documents/workspace/cheapnsale/iOS/customer_client_ios/Foodle/CollapsibleOrderDetailTableViewController.swift"
+                  timestampString = "522032635.0657"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "103">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Foodle.Section.name.setter : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;"
+                  moduleName = "Foodle"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/devcraft12/Documents/workspace/cheapnsale/iOS/customer_client_ios/Foodle/CollapsibleOrderDetailTableViewController.swift"
+                  timestampString = "522032635.066685"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "149">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

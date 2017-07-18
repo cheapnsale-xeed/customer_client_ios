@@ -19,8 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        //navigationController = UINavigationController(rootViewController: MainController())
-        navigationController = UINavigationController(rootViewController: StoreDetailController())
+//        navigationController = UINavigationController(rootViewController: MainController())
+//        navigationController = UINavigationController(rootViewController: StoreDetailController())
+//        navigationController = UINavigationController(rootViewController: OrderViewController())
+        navigationController = UINavigationController(rootViewController: CollapsibleOrderDetailTableViewController())
+        
         
         window?.rootViewController = navigationController
         

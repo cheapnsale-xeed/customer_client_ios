@@ -10,7 +10,7 @@ import Foundation
 import TRON
 import SwiftyJSON
 
-// Store 상세 화면에서 Store 데이터를 하위 뷰로 전달하는데 문제가 있어서 전역 변수로 셋팅
+
 var myStore: Store?
 
 struct Service {
@@ -20,7 +20,7 @@ struct Service {
     static let sharedInstance = Service()
     
     
-    // 메인화면용 Store 리스트 가져오기
+    // 메인화면var Store 리스트 가져오기
     func fetchMainFeed(completion: @escaping (MainDatasource?, Error?) -> ()) {
         let request: APIRequest<MainDatasource, JSONError> = basicURL.request("/stores")
         
@@ -61,4 +61,40 @@ struct Service {
             print("JSON ERROR")
         }
     }
+    
+    // Store Menu 서브 출력용 가공 작업
+    func arrangeStoreMenu(_ menus: [Menu]) -> NSMutableArray {
+        var menuCategory: String?
+        let categoryAddedMenus: NSMutableArray = []
+        
+        for menu in menus {
+            if (menu.menuCategory == "N/A") {
+                let tempArray:NSMutableArray = menus as! NSMutableArray
+                return (tempArray)
+            }
+            
+            if menuCategory != nil {
+                
+                if menuCategory == menu.menuCategory {
+                    menuCategory = menu.menuCategory
+                    menu.menuCategory = "N/A"
+                    categoryAddedMenus.add(menu) // 이전 Category와 같은 경우 메뉴만 추가
+                } else {
+                    menuCategory = menu.menuCategory
+                    categoryAddedMenus.add(menu.menuCategory) // category용 추가
+                    menu.menuCategory = "N/A"
+                    categoryAddedMenus.add(menu) // 메뉴용 추가
+                }
+                
+            } else {
+                menuCategory = menu.menuCategory
+                categoryAddedMenus.add(menu.menuCategory) // category용 추가
+                menu.menuCategory = "N/A"
+                categoryAddedMenus.add(menu) // 메뉴용 추가
+            }
+        }
+        
+        return categoryAddedMenus
+    }
+    
 }

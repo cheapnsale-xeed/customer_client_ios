@@ -14,7 +14,7 @@ class StoreTabMenuDetailView: UIView, UICollectionViewDataSource, UICollectionVi
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = .green
+        cv.backgroundColor = .white
         cv.dataSource = self
         cv.delegate = self
         return cv
@@ -25,7 +25,7 @@ class StoreTabMenuDetailView: UIView, UICollectionViewDataSource, UICollectionVi
     let menuCellId = "menuCellId"
     let storeInfoCellId = "storeInfoCellId"
     
-    let colors = [ColorRes.colorDeepYamiGreen, ColorRes.colorPastelRed]
+    //let colors = [ColorRes.colorDeepYamiGreen, ColorRes.colorPastelRed]
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,7 +40,7 @@ class StoreTabMenuDetailView: UIView, UICollectionViewDataSource, UICollectionVi
         collectionView.register(StoreInfoCell.self, forCellWithReuseIdentifier: storeInfoCellId)
         
         addSubview(collectionView)
-        collectionView.anchor(self.topAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: frame.width, heightConstant: 300)
+        collectionView.anchor(self.topAnchor, left: self.leftAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: frame.width, heightConstant: 500)
         
         // 최초 로딩시 메뉴 리스트가 표시되도록 셋팅
         let selectedIndexPath = NSIndexPath(item: 0, section: 0)
@@ -63,7 +63,7 @@ class StoreTabMenuDetailView: UIView, UICollectionViewDataSource, UICollectionVi
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) //as! UICollectionViewCell
         
-        cell.backgroundColor = colors[indexPath.item]
+        //cell.backgroundColor = colors[indexPath.item]
         
         return cell
     }

@@ -17,9 +17,6 @@ class SubMenu: JSONDecodable {
     let subMenuType: String    
     
     required init(json: JSON) {
-        
-        print("SubMenu : \(json)")
-        
         self.subMenuName = json["SUB_MENU_NAME"].stringValue
         self.subMenuPrice = json["SUB_MENU_PRICE"].intValue
         self.subMenuType = json["SUB_MENU_TYPE"].stringValue

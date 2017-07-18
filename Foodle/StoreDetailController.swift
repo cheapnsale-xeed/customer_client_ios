@@ -16,7 +16,7 @@ class StoreDetailController: UIViewController {
     
     var scrollView: UIScrollView!
     let basicURL = TRON(baseURL: "https://cv47nyx5yl.execute-api.ap-northeast-1.amazonaws.com/prod")
-    var storeId:String = "shop016"
+    var store: Store?
     var storeDetailDatasource: StoreDetailDatasource!
     
     let storeImageView : CachedImageView = {
@@ -73,38 +73,22 @@ class StoreDetailController: UIViewController {
         return detailView
     }()
     
-    var store: Store?
-    
+    /*
     override func viewWillAppear(_ animated: Bool) {
-        Service.sharedInstance.fetchStoreDetail(id: storeId).perform(withSuccess: { store in
-            self.storeNameLabel.text = store.name
-            //self.foodleTimeLabel.text = ""  $$ 푸들 가능시간 뽑아서 셋팅 요망
-            self.addressLabel.text = store.address
-            
-            // $$ 뷰가 로드되기 전에 Store 정보가 셋업되야 하는데 뷰가 로딩 후 Store가 셋업되다 보니 store 정보를 할당하지 못해서 하위 뷰에서 store를 참조시 nil 이 나오게 된다. 뷰 로드 전에 store 정보를 셋팅할 수 있게 변경이 필요함
-            if store is Store {
-                print("Yes Store")
-            } else {
-                print("No Store")
-            }
-            
-            self.store = store
-            let tempStore:Store = store
-            myStore = tempStore
+        Service.sharedInstance.fetchStoreDetail(id: (store?.id)!).perform(withSuccess: { store in
+     
         })
     }
-    
+    */
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationController?.hidesBarsOnSwipe = false
         
-        print("Address : \(self.store?.address)")
-        
         self.scrollView = UIScrollView(frame: view.bounds)
         self.scrollView.backgroundColor = .white
-        self.scrollView.contentSize = CGSize(width: view.frame.width, height: 1000)
+        self.scrollView.contentSize = CGSize(width: view.frame.width, height: 1500)
         self.scrollView.autoresizingMask = UIViewAutoresizing.flexibleHeight
         
         storeTabMenuDetailView.tabBar = storeTabBar
@@ -115,7 +99,6 @@ class StoreDetailController: UIViewController {
         scrollView.addSubview(addressLabel)
         scrollView.addSubview(crossBarView)
         scrollView.addSubview(storeTabBar)
-        scrollView.addSubview(storeTabMenuDetailView)
         view.addSubview(scrollView)
       
         storeImageView.anchor(scrollView.topAnchor, left: scrollView.leftAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: view.frame.width, heightConstant: 170)
@@ -124,8 +107,29 @@ class StoreDetailController: UIViewController {
         addressLabel.anchor(foodleTimeLabel.bottomAnchor, left: scrollView.leftAnchor, bottom: nil, right: nil, topConstant: 8, leftConstant: 15, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 0)
         crossBarView.anchor(addressLabel.bottomAnchor, left: scrollView.leftAnchor, bottom: nil, right: nil, topConstant: 10, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: view.frame.width, heightConstant: 1.5)
         storeTabBar.anchor(crossBarView.bottomAnchor, left: scrollView.leftAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: view.frame.width, heightConstant: 28)
-        storeTabMenuDetailView.anchor(storeTabBar.bottomAnchor, left: scrollView.leftAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: view.frame.width, heightConstant: 300)
+        
+        
+        // 가게 기본 정보 셋팅
+        self.storeNameLabel.text = store?.name
+        //self.foodleTimeLabel.text = ""  $$ 푸들 가능시간 뽑아서 셋팅 요망
+        self.addressLabel.text = store?.address
+        
+        setupMenuList()
     }
+    
+    // 메뉴 리스트 셋팅
+    func setupMenuList() {
+        Service.sharedInstance.fetchStoreDetail(id: (store?.id)!).perform(withSuccess: { store in
+            myStore = store
+            self.setupMeuListView() // store 데이터가 시스템 변수(myStore)에 셋팅된 후에 뷰를 셋업한다
+        })
+    }
+    
+    func setupMeuListView() {
+        scrollView.addSubview(storeTabMenuDetailView)
+        storeTabMenuDetailView.anchor(storeTabBar.bottomAnchor, left: scrollView.leftAnchor, bottom: nil, right: nil, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: view.frame.width, heightConstant: 500)
+    }
+    
     
     // 탭메뉴 클릭 했을때 아래 내용이 자동 스크롤
     func scrollToMenuIndex(_ menuIndex: Int) {

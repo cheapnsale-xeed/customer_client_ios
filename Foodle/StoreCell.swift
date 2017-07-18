@@ -15,6 +15,7 @@ class StoreCell: DatasourceCell {
     override var datasourceItem: Any? {
         didSet {
             guard let store = datasourceItem as? Store else { return }
+            self.store = store
             storeId = store.id
             storeNameLabel.text = store.name
             prepareTimeLabel.text = "\(store.avgPrepTime)분 걸려요"
@@ -38,6 +39,7 @@ class StoreCell: DatasourceCell {
         
     // Store ID
     var storeId: String = ""
+    var store: Store?
     
     // Store 이름
     let storeNameLabel: UILabel = {

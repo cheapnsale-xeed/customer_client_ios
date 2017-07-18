@@ -5,6 +5,8 @@
 //  Created by devcraft50 on 04/07/2017.
 //  Copyright © 2017 devcraft50. All rights reserved.
 //
+//  StoreTabBar 안에 들어갈 Cell
+
 
 import UIKit
 

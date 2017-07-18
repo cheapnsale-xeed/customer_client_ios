@@ -62,7 +62,7 @@ class MainController: DatasourceController {
         let cell = collectionView.cellForItem(at: indexPath)
         let storeCell = cell as! StoreCell
         print(storeCell.storeNameLabel.text ?? "cell")
-        storeDetailController.storeId = storeCell.storeId
+        storeDetailController.store = storeCell.store
         navigationController?.setViewControllers([storeDetailController], animated: true)
     }
     

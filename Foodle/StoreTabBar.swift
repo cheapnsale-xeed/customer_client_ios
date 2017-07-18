@@ -5,6 +5,7 @@
 //  Created by devcraft50 on 04/07/2017.
 //  Copyright © 2017 devcraft50. All rights reserved.
 //
+// Store 상세 화면에서 메뉴와 가게정보를 보여주는 탭
 
 import UIKit
 

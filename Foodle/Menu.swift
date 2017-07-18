@@ -19,8 +19,9 @@ class Menu: JSONDecodable {
     let menuPrice: Int
     let menuImg: String
     let menuDiscountPrice: Int
-    let menuCategory: String
+    var menuCategory: String
     var subMenus: [SubMenu] = []
+    var expanded: Bool
     
     required init(json: JSON) {
         
@@ -38,5 +39,6 @@ class Menu: JSONDecodable {
         self.menuImg = json["MENU_IMG"].stringValue
         self.menuDiscountPrice = json["MENU_DISCOUNT_PRICE"].intValue
         self.menuCategory = json["MENU_CATEGORY"].stringValue
+        self.expanded = false
     }
 }
